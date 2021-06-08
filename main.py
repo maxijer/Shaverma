@@ -46,7 +46,6 @@ def get_2_key(data):
 @dp.callback_query_handler()
 async def callback_ret(call: CallbackQuery):
     data = str(call.data).split(":")
-    print(data)
     if data[0] == "shaverma":
         await call.message.edit_text("Тогда вот, что вам подойдёт", reply_markup=get_2_key(data[1]))
     elif data[0] == "you_choice":
@@ -99,10 +98,6 @@ async def start(message: types.Message):
                            "Я готов помочь тебе сделать правильный выбор, брат мой меньший, чего ты хочешь?",
                            reply_markup=klava)
 
-#
-# async def shedule():
-#     await bot.send_message("896895871", "1")
-#
 
 if __name__ == '__main__':
     # dp._loop_create_task(shedule())
